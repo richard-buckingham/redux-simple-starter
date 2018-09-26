@@ -1,6 +1,12 @@
 import React from "react";
 
 const VideoDetail = ({ video }) => {
+  //  handle the case where the component is being rendered,
+  //  but videos have not yet been received
+  if (!video) {
+    return <div>Loading...</div>;
+  }
+
   const videoId = video.id.videoId;
   const url = `https://www.youtube.com/embed/${videoId}`;
 
